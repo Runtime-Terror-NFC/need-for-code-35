@@ -1,5 +1,7 @@
 import sqlite3
- 
+
+email = input()
+password = input()
 con = sqlite3.connect('login.db')
 cursor = con.cursor()
 
