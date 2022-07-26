@@ -27,10 +27,12 @@
 }
 
 .headline {
-    margin: auto 0;
     display: flex;
     font-size: 4em;
-    margin: auto;
+    font-style: italic;
+    font-weight: 750;
+    padding-top: 300px;
+    margin-left: 100px;
 }
 
 .nav-link {
@@ -46,8 +48,8 @@
 }
 
 .card-block {
-    width: 280px;
-    height: 10em;
+    width: 300px;
+    height: 200px;
     display: flex;
     margin: 0 auto;
     background-color: #6200ee;
@@ -56,6 +58,13 @@
     justify-content: center;
     font-weight: bold;
     color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.card-title{
+    font-weight: 600;
+
 }
 
 #navbar {
