@@ -1,0 +1,27 @@
+.logo-img{
+    height:4rem;
+    width: auto;
+}
+
+.navbar{
+    background-color: #e3f2fd;
+}
+
+.background{
+    background: rgba(33,37,41,0.55) no-repeat center center;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    /* top: -75px; */
+    /* z-index: -1; */
+    margin-bottom: 3rem;
+}
+
+.nav-link{
+    color: #000;
+}
+
+.card-body{
+}
