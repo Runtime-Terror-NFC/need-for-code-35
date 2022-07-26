@@ -27,17 +27,16 @@
     display: flex;
     width: 100%;
 height: 30vh;
-top: -100px;
+top: -200px;
 position: relative;
-z-index: ;
 }
 
 .card-block{
-width: 300px;
+width: 280px;
 height: 10em;
 display: flex;
 margin: 0 auto;
-background-color: aqua;
+background-color: #f1e8f7;
 border-bottom-left-radius: 50px;
 border-top-right-radius: 50px;
 }
@@ -53,7 +52,7 @@ border-top-right-radius: 50px;
   #navbar.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
-    top: -91px;
+    top: -75px;
     transition: transform 0.2s;
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.9);
