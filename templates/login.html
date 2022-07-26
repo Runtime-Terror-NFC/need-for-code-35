@@ -12,31 +12,52 @@
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
       <!--Main Navigation-->
   <header>
     <style>
-      #intro {
-        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
-        height: 100vh;
-      }
+      
 
       /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
+      /* @media (min-width: 992px) {
         #intro {
           margin-top: -58.59px;
         }
-      }
+      } */
 
-      .navbar .nav-link {
-        color: #fff !important;
-      }
+      
     </style>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img src="..\logos\Asset 1.png" alt="logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse  d-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Background image -->
     <div id="intro" class="bg-image shadow-2-strong">
-      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0);">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
