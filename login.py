@@ -1,7 +1,9 @@
 import sqlite3
 
-email = input()
-password = input()
+email = input("email: ")
+password = input("pass: ")
+name = input("name: ")
+type = input("teacher/student/admin? ")
 con = sqlite3.connect('login.db')
 cursor = con.cursor()
 
@@ -10,7 +12,7 @@ try:
     cursor.execute(com)
 except:
     exit
-com1  ="INSERT INTO login VALUES('daanish303@gmail.com','daanish peerkhan','daani','student')"
+com1  ="INSERT INTO login VALUES('"+email+"','"+name+"','"+password+"','"+type+"')"
 cursor.execute(com1)
 con.commit()
 con.close()

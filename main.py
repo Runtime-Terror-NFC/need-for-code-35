@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect,session
 import sqlite3
-
+import marks
 app = Flask('__name__')
 app.secret_key = 'secretsecret'
 temp = 0
@@ -22,34 +22,37 @@ def login():
             db_email = result[i][0]
             db_password = result[i][2]
             user_type = result[i][3]
+            # print(db_email,db_password)
             if email == db_email and password == db_password:
-                temp = 1
-        if temp == 1:
-            session['login'] = 1
-            if user_type == 'student':
-                return redirect('/student')
-            elif user_type == 'teacher':
-                return redirect('/teacher')
-
-        else:
-            session['login']=0
-            return render_template('login.html',flag = "Invalid Login")
+                if user_type == 'student':
+                    return redirect('/student')
+                elif user_type == 'teacher':
+                    return redirect('/teacher')
+            else:
+                render_template('login.html',flag="Invalid Credentials")
 
     return render_template('login.html')
 
 @app.route('/student',methods=["POST","GET"])
 def student_page():
-    if session['login']==1:
-        return render_template('student-page.html')
-    else:
-        redirect('/login')
+    return render_template('student-page.html')
 
-@app.route('/teacher')
+@app.route('/teacher',methods=["GET","POST"])
 def teacher_page():
+    if request.form.get=='POST':
+        return "teacher"
     return render_template('teacher-page.html')
 
 @app.route('/admin')
 def admin():
     return render_template('admin-page.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+    
+@app.route('/contact',methods=["GET","POST"])
+def contact():
+    return render_template('contact.html')
 
 app.run()
