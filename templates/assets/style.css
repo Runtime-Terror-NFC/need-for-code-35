@@ -1,20 +1,21 @@
 .logo-img{
-    height:4rem;
+    height:3rem;
     width: auto;
 }
 
 .navbar{
-    background-color: #e3f2fd;
+    width: 100%;
+    z-index: 1;
 }
 
 .background{
     background: rgba(33,37,41,0.55) no-repeat center center;
     background-size: cover;
     background-blend-mode: darken;
-    height: 70vh;
+    height: 100vh;
     position: relative;
     display: flex;
-    /* top: -75px; */
+    top: -100px;
     /* z-index: -1; */
 }
 
@@ -28,6 +29,7 @@
 height: 30vh;
 top: -100px;
 position: relative;
+z-index: ;
 }
 
 .card-block{
@@ -40,3 +42,33 @@ border-bottom-left-radius: 50px;
 border-top-right-radius: 50px;
 }
 
+#navbar {
+    transition: background-color 0.2s;
+    /* Force Hardware Acceleration in WebKit */
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+  }
+  #navbar.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -91px;
+    transition: transform 0.2s;
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: saturate(1.8) blur(20px);
+
+  }
+  #navbar.is-fixed li a {
+    color: #212529;
+  }
+  #navbar.is-fixed .logo{
+      filter: none;
+  }
+  /* #navbar.is-fixed .svg-logo{
+      filter: none; */
+  #navbar.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    transform: translate3d(0, 100%, 0);
+  }
