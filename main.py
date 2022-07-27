@@ -1,8 +1,12 @@
 from flask import Flask,render_template,request,redirect,session
+import os
 import sqlite3
 import marks
+
 app = Flask('__name__')
 app.secret_key = 'secretsecret'
+app.config['UPLOAD_FOLDER'] = "files"
+
 temp = 0
 
 @app.route('/')
@@ -39,9 +43,17 @@ def student_page():
 
 @app.route('/teacher',methods=["GET","POST"])
 def teacher_page():
-    if request.form.get=='POST':
-        return "teacher"
-    return render_template('teacher-page.html')
+    import pandas as pd
+    file = pd.read_csv("attendance.csv")
+    present = file['Attendence']
+    absent = []
+    count = 0
+    for i in range(len(present)):
+        if present[i] == "Present":
+            count+=1
+        else:
+            absent.append(file['Name'][i])
+    return render_template('teacher-page.html',present=count,absent=absent)
 
 @app.route('/admin')
 def admin():
@@ -50,7 +62,7 @@ def admin():
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
-    
+
 @app.route('/contact',methods=["GET","POST"])
 def contact():
     return render_template('contact.html')
