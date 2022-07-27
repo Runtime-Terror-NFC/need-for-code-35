@@ -132,3 +132,12 @@
 .contact-img{
     margin: auto;
 }
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #6200ee;
+    color: #fff;
+    font-weight: 600;
+}
