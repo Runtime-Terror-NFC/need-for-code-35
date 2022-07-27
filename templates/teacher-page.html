@@ -19,7 +19,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="{{url_for('static',filename='logos/Asset1.png')}}" alt="logo" class="logo-img">
+        <a class="navbar-brand" href="/"> <img src="{{url_for('static',filename='logos/Asset1.png')}}" alt="logo" class="logo-img">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +47,8 @@
   </header>
   <div class="card-block">Students Present Today<br><br>{{present}}
   </div>
-  <div class="card-block">Students Absent Today<br><br>{{%for each in absent%}}</div>
-  <div class="card-block">Top 3 Rankers of the class<br><br></div>
-  <div class="card-block">Bar Graph</div>
+  <div class="card-block">Students Absent Today<br><br>{% for absent in my_collection %}absent<br>{% endfor %}</div>
+  <div class="card-block">Top Scorer of the class<br><br>{{highest}}</div>
   <footer class="bg-light text-lg-start">
 
     <!-- Copyright -->

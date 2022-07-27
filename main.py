@@ -53,7 +53,13 @@ def teacher_page():
             count+=1
         else:
             absent.append(file['Name'][i])
-    return render_template('teacher-page.html',present=count,absent=absent)
+    file1 = pd.read_csv("grading.csv")
+    grades = []
+    for i in range(len(file1['Marks'])):grades.append(file1['Marks'][i])
+    maxv = max(grades)
+    index = grades.index(maxv)
+    highest = file1['Name'][index]
+    return render_template('teacher-page.html',present=count,absent=absent,highest=highest)
 
 @app.route('/admin')
 def admin():
