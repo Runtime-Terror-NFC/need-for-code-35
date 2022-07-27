@@ -6,48 +6,167 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Apply?</title>
     <!-- Font Awesome -->
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="{{url_for('static',filename='css/mdb.min.css')}}" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="{{url_for('static',filename='assets/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file__upload {
+    width: 400px;
+    height: 445px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+
+.file__upload .header {
+    width: 100%;
+    height: 145px;
+    background: #4db6ac;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.file__upload .header p {
+    color: #FFF;
+}
+
+.file__upload .header p i.fa {
+    margin-right: 10px;
+}
+
+.file__upload .header p span {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.file__upload .header p span span {
+    font-weight: 600;
+}
+
+.file__upload .body {
+    background: #FFF;
+    width: 100%;
+    height: calc(100% - 145px);
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.file__upload .body input[type="file"] {
+    display: none;
+}
+
+.file__upload .body i.fa {
+    color: #d3d3d3;
+    margin-bottom: 20px;
+}
+
+.file__upload .body p strong {
+    color: #4db6ac;
+}
+
+.file__upload .body p span {
+    color: #4db6ac;
+    text-decoration: underline;
+}
+
+body{
+    flex-direction: column;
+    padding: 0;
+}
+
+.navbar{
+    width: 100%;
+   top: -50px;
+}
+
+    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <img src="{{url_for('static',filename='logos/Asset1.png')}}" alt="logo" class="logo-img">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse  d-flex justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-dark" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Log In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <!--Main Navigation-->
   <header>
 
-    <nav class="navbar navbar-expand-lg" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="{{url_for('static',filename='/logos/Asset1.png')}}" alt="logo" class="logo-img">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse  d-flex justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active text-dark" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    
     <div id="intro" class="bg-image shadow-2-strong">
       <div class="mask d-flex align-items-center h-100">
         <div class="container">
-            <h>lets see</h>
+            <div class="file__upload">
+                <div class="header">
+                    <p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
+                </div>
+                <form class="body">
+                    <input type="file" id="upload" accept=".csv">
+                    <label for="upload">
+                        <i class="fa fa-file-text-o fa-3x"></i>
+                        <p>
+                            <strong>Drag and drop</strong> files here<br>
+                            or <span>browse</span> to begin the upload
+                        </p>
+                    </label>
+                </form>
+            </div>
+            
+            
       </div>
     </div>
     <!-- Background image -->
@@ -63,5 +182,10 @@
     <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
     <!-- Custom scripts -->
     <script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+  integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+  integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
 </body>
 </html>
